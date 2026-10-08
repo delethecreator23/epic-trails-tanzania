@@ -1,0 +1,2866 @@
+/* ===== GENERAL ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+/* ===== NAVBAR ===== */
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    padding: 0 60px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: white;
+    position: relative;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+    display: block;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #222;
+    font-size: 16px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height: 70px;
+        padding: 0 20px;
+    }
+
+    .logo img {
+        width: 90px;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 2;
+        border: none;
+        background: none;
+        font-size: 28px;
+        cursor: pointer;
+        padding: 5px;
+        color: #222;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav.active {
+        display: flex;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        flex-direction: column;
+        gap: 0;
+        background: white;
+        padding: 10px 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        border-radius: 10px;
+    }
+
+    nav.active a {
+        padding: 12px 5px;
+    }
+
+}
+
+nav a {
+    text-decoration: none;
+    color: #222;
+    font-size: 16px;
+}
+/* ===== HERO SECTION ===== */
+
+.hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    padding: 80px 60px;
+
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+        url("images/hero/hero1.jpeg/WhatsApp\ Image\ 2026-09-21\ at\ 09.48.36.jpeg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 700px;
+    color: white;
+}
+
+.hero-subtitle {
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero-text {
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.primary-btn {
+    background: #1f5c3a;
+    color: white;
+}
+
+.secondary-btn {
+    border: 1px solid white;
+    color: white;
+}
+/* ABOUT US */
+
+.about {
+    position: relative;
+    width: 100%;
+    padding: 100px 0;
+    background: #f7f8f5;
+
+}
+
+.about-image {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    height: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* DARK OVERLAY */
+
+.about-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.72),
+        rgba(0, 0, 0, 0.35),
+        rgba(0, 0, 0, 0.10)
+    );
+}
+
+/* TEXT OVER IMAGE */
+
+.about-overlay {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 12%;
+    transform: translateY(-50%);
+    max-width: 600px;
+    color: #fff;
+}
+
+.about-overlay .section-label {
+    color: #fff;
+}
+
+.about-overlay h2 {
+    font-size: 56px;
+    line-height: 1.05;
+    margin: 15px 0 22px;
+}
+
+.about-overlay p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0 0 15px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.about-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 13px 24px;
+    background: #fff;
+    color: #222;
+    text-decoration: none;
+    border-radius: 2px;
+    font-weight: 600;
+}
+
+/* PHONE */
+
+@media (max-width: 600px) {
+
+    .about {
+        padding: 70px 20px;
+    }
+
+    .about-image {
+        height: 650px;
+    }
+
+    .about-overlay {
+        left: 25px;
+        right: 25px;
+    }
+
+    .about-overlay h2 {
+        font-size: 38px;
+    }
+
+    .about-overlay p {
+        font-size: 15px;
+    }
+}
+}
+/* OUR EXPERIENCES */
+
+.tours {
+    padding: 110px 8%;
+    background: #f7f8f5;
+}
+
+.tours-header {
+    max-width: 650px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.tours-header h2 {
+    font-size: 44px;
+    margin: 14px 0 16px;
+    line-height: 1.1;
+}
+
+.tours-header p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* EXPERIENCE CARDS */
+
+.tours-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.tour-card {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.tour-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* IMAGE */
+
+.tour-image {
+    height: 280px;
+    overflow: hidden;
+}
+
+.tour-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.tour-card:hover .tour-image img {
+    transform: scale(1.06);
+}
+
+/* CONTENT */
+
+.tour-content {
+    padding: 30px 30px 32px;
+}
+
+.tour-content > span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #315c3b;
+}
+
+.tour-content h3 {
+    font-size: 25px;
+    margin: 11px 0 12px;
+}
+
+.tour-content p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.tour-content a {
+    color: #315c3b;
+    text-decoration: none;
+    font-weight: 700;
+    transition: opacity 0.3s ease;
+}
+
+.tour-content a:hover {
+    opacity: 0.7;
+}
+
+/* PHONE */
+
+@media (max-width: 768px) {
+
+    .tours {
+        padding: 75px 20px;
+    }
+
+    .tours-header {
+        margin-bottom: 40px;
+    }
+
+    .tours-header h2 {
+        font-size: 34px;
+    }
+
+    .tours-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .tour-image {
+        height: 270px;
+    }
+
+    .tour-content {
+        padding: 25px;
+    }
+
+    .tour-content h3 {
+        font-size: 22px;
+    }
+}
+/* GALLERY */
+.gallery {
+    padding: 90px 8%;
+    background: #ffffff;
+}
+
+.gallery-header {
+    max-width: 650px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.gallery-header h2 {
+    font-size: 40px;
+    margin: 12px 0 15px;
+}
+
+.gallery-header p {
+    color: #666;
+    line-height: 1.7;
+}
+
+.gallery-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    grid-auto-rows: 230px;
+    gap: 15px;
+}
+
+.gallery-item {
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-large {
+    grid-row: span 2;
+}
+
+.gallery-wide {
+    grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        padding: 65px 6%;
+    }
+
+    .gallery-header h2 {
+        font-size: 32px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 180px;
+    }
+
+    .gallery-large {
+        grid-row: span 1;
+    }
+
+    .gallery-wide {
+        grid-column: span 2;
+    }
+}/* CTA */
+.cta {
+    padding: 100px 8%;
+    background: #315c3b;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: auto;
+}
+
+.cta .section-label {
+    color: #ffffff;
+}
+
+.cta h2 {
+    color: #ffffff;
+    font-size: 42px;
+    margin: 12px 0 15px;
+}
+
+.cta p {
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #ffffff;
+    color: #315c3b;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+/* =========================================
+   CONTACT — TALK TO AN EXPERT
+========================================= */
+
+.contact {
+    padding: 120px 8%;
+    background: #f7f8f5;
+}
+
+.contact-container {
+    max-width: 1250px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 90px;
+
+    align-items: center;
+}
+
+/* LEFT */
+
+.contact-info {
+    max-width: 520px;
+}
+
+.contact-info h2 {
+    font-size: 58px;
+    line-height: 1;
+    margin: 15px 0 24px;
+}
+
+.contact-intro {
+    color: #666;
+    font-size: 17px;
+    line-height: 1.75;
+    max-width: 480px;
+}
+
+.expert-contact {
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.contact-card {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(49, 92, 59, 0.15);
+}
+
+.contact-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #315c3b;
+    margin-bottom: 8px;
+}
+
+.contact-card a,
+.contact-card strong {
+    display: block;
+    font-size: 21px;
+    color: #222;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.contact-card a:hover {
+    color: #315c3b;
+}
+
+.contact-card p {
+    margin: 6px 0 0;
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* RIGHT FORM */
+
+.contact-form {
+    background: #ffffff;
+    padding: 45px;
+    border-radius: 22px;
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.08);
+}
+
+.form-heading span {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #315c3b;
+}
+
+.form-heading h3 {
+    font-size: 30px;
+    margin: 10px 0 30px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    border: 1px solid #e2e5df;
+    background: #fafbf9;
+
+    padding: 15px 16px;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    border-radius: 6px;
+    outline: none;
+
+    transition: border-color 0.25s ease,
+                background 0.25s ease;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: #315c3b;
+    background: #ffffff;
+}
+
+.contact-form button {
+    align-self: flex-start;
+
+    margin-top: 5px;
+
+    padding: 15px 25px;
+
+    border: none;
+    border-radius: 4px;
+
+    background: #315c3b;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: transform 0.25s ease,
+                opacity 0.25s ease;
+}
+
+.contact-form button span {
+    margin-left: 8px;
+    font-size: 17px;
+}
+
+.contact-form button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .contact {
+        padding: 80px 20px;
+    }
+
+    .contact-container {
+        display: block;
+    }
+
+    .contact-info {
+        max-width: none;
+    }
+
+    .contact-info h2 {
+        font-size: 40px;
+    }
+
+    .contact-intro {
+        font-size: 15px;
+    }
+
+    .expert-contact {
+        margin-top: 30px;
+        gap: 10px;
+    }
+
+    .contact-card {
+        padding: 18px 0;
+    }
+
+    .contact-card a,
+    .contact-card strong {
+        font-size: 19px;
+    }
+
+    .contact-form {
+        margin-top: 45px;
+        padding: 25px 20px;
+        border-radius: 16px;
+    }
+
+    .form-heading h3 {
+        font-size: 25px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .contact-form button {
+        width: 100%;
+        padding: 16px;
+    }
+}
+/* =========================================
+   EPIC TRAILS TANZANIA — FOOTER
+========================================= */
+
+.footer {
+    background: #173322;
+    color: #ffffff;
+    padding: 80px 7% 25px;
+}
+
+.footer-container {
+    max-width: 1250px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.2fr;
+    gap: 60px;
+}
+
+
+/* BRAND */
+
+.footer-brand {
+    max-width: 430px;
+}
+
+.footer-kicker {
+    display: block;
+    margin-bottom: 18px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    color: rgba(255,255,255,0.55);
+}
+
+.footer-brand h3 {
+    margin: 0 0 20px;
+
+    font-size: 38px;
+    line-height: 1.1;
+}
+
+.footer-brand p {
+    margin: 0 0 25px;
+
+    color: rgba(255,255,255,0.7);
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.footer-whatsapp {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+
+/* COLUMNS */
+
+.footer-column,
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.footer-column h4,
+.footer-contact h4 {
+    margin: 0 0 10px;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,0.55);
+}
+
+.footer-column a,
+.footer-contact a,
+.footer-contact p {
+    margin: 0;
+
+    color: rgba(255,255,255,0.75);
+
+    font-size: 15px;
+    line-height: 1.5;
+
+    text-decoration: none;
+}
+
+.footer-column a:hover,
+.footer-contact a:hover,
+.footer-whatsapp:hover {
+    color: #ffffff;
+}
+
+
+/* BOTTOM */
+
+.footer-bottom {
+    max-width: 1250px;
+    margin: 65px auto 0;
+
+    padding-top: 22px;
+
+    border-top: 1px solid rgba(255,255,255,0.15);
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: rgba(255,255,255,0.45);
+
+    font-size: 12px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .footer {
+        padding: 65px 20px 25px;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footer-brand h3 {
+        font-size: 34px;
+    }
+
+    .footer-bottom {
+        margin-top: 45px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+}/* KILIMANJARO PACKAGES */
+.packages {
+    padding: 90px 8%;
+    background: #f7f8f5;
+}
+
+.packages-header {
+    max-width: 650px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.packages-header h2 {
+    font-size: 40px;
+    margin: 12px 0 15px;
+}
+
+.packages-header p {
+    color: #666;
+    line-height: 1.7;
+}
+
+.packages-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.package-card {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.package-content {
+    padding: 30px;
+}
+
+.package-content > span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #315c3b;
+}
+
+.package-content h3 {
+    font-size: 23px;
+    margin: 10px 0;
+}
+
+.package-content p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.package-content a {
+    color: #315c3b;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+@media (max-width: 900px) {
+    .packages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .packages {
+        padding: 65px 6%;
+    }
+
+    .packages-header h2 {
+        font-size: 32px;
+    }
+
+    .packages-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===== PROFESSIONAL PACKAGES ===== */
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.package-card {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+..package-image {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+}
+
+.package-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+}
+
+/* PHONE */
+@media (max-width: 600px) {
+
+    .packages-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 0 20px;
+    }
+
+    .package-image {
+        height: 320px;
+    }
+
+    .package-image img {
+        object-position: center 20%;
+    }
+}
+}
+}
+
+/* ===== PHONE ===== */
+
+@media (max-width: 600px) {
+    .packages-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .package-image {
+        height: 210px;
+    }
+}
+/* ===== EPIC TRAILS AFRICA BADGES ===== */
+
+.package-image {
+    position: relative;
+}
+
+.package-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 2;
+}
+
+.package-badge span,
+.package-badge strong {
+    background: rgba(31, 78, 55, 0.95);
+    color: #ffffff;
+    padding: 7px 11px;
+    border-radius: 5px;
+    font-size: 12px;
+    width: fit-content;
+    white-space: nowrap;
+}
+
+.package-badge strong {
+    font-size: 13px;
+    font-weight: 600;
+}
+/* ===== KILIMANJARO PACKAGE DETAILS ===== */
+
+.package-details {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.details-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.details-header span {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.details-header h2 {
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.details-header p {
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ROUTE CARD */
+
+.route-detail {
+    background: #ffffff;
+    border-radius: 16px;
+    margin-bottom: 35px;
+    padding: 45px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+}
+
+.route-detail-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.route-detail-content > span {
+    display: inline-block;
+    background: rgba(31, 78, 55, 0.10);
+    color: #1f4e37;
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.route-detail h2 {
+    font-size: 30px;
+    margin: 15px 0 12px;
+}
+
+.route-detail p {
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.route-detail h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.route-detail ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+}
+
+.route-detail li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eeeeee;
+    line-height: 1.6;
+}
+
+.route-detail li:last-child {
+    border-bottom: none;
+}
+
+/* BUTTON */
+
+.route-button {
+    display: inline-block;
+    background: #1f4e37;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.route-button:hover {
+    opacity: 0.85;
+}
+
+/* PHONE */
+
+@media (max-width: 600px) {
+
+    .package-details {
+        margin: 55px auto;
+        padding: 0 15px;
+    }
+
+    .details-header h2 {
+        font-size: 28px;
+    }
+
+    .route-detail {
+        padding: 25px 20px;
+        border-radius: 12px;
+    }
+
+    .route-detail h2 {
+        font-size: 25px;
+    }
+
+    .route-detail li {
+        font-size: 14px;
+    }
+}
+/* ===== PROFESSIONAL ROUTE ITINERARY ===== */
+
+.itinerary-toggle {
+    background: #1f4e37;
+    color: #ffffff;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.itinerary-toggle:hover {
+    opacity: 0.88;
+}
+
+.itinerary {
+    display: none;
+    margin-top: 20px;
+    padding-top: 5px;
+    border-top: 1px solid #e8e8e8;
+}
+
+.itinerary.show {
+    display: block;
+}
+
+.itinerary-day {
+    padding: 18px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.itinerary-day:last-child {
+    border-bottom: none;
+}
+
+.itinerary-day h4 {
+    margin: 0 0 12px;
+    color: #1f4e37;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.itinerary-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.itinerary-info span {
+    background: #f4f7f5;
+    color: #1f4e37;
+    padding: 6px 9px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.itinerary-day p {
+    margin: 0;
+    line-height: 1.7;
+    font-size: 14px;
+    color: #555555;
+}
+
+/* PHONE */
+
+@media (max-width: 600px) {
+
+    .itinerary-toggle {
+        width: 100%;
+    }
+
+    .itinerary-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .itinerary-info span {
+        text-align: center;
+    }
+
+    .itinerary-day h4 {
+        font-size: 15px;
+    }
+}
+/* ===== MACHAME ROUTE PAGE ===== */
+
+.route-header {
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    padding: 18px 6%;
+}
+
+.route-nav {
+    max-width: 1150px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.route-nav a {
+    color: #1f4e37;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.route-nav span {
+    color: #1f4e37;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+/* HERO */
+
+.route-hero {
+    min-height: 520px;
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("/packages/images/Machame.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.route-hero-overlay {
+    color: #ffffff;
+}
+
+.route-hero-overlay span {
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.route-hero-overlay h1 {
+    font-size: 58px;
+    margin: 12px 0;
+}
+
+.route-hero-overlay p {
+    font-size: 19px;
+}
+
+
+/* GENERAL CONTAINER */
+
+.route-intro,
+.route-highlights,
+.route-itinerary {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 30px;
+}
+
+.route-intro {
+    text-align: center;
+}
+
+.route-intro h2,
+.route-highlights h2,
+.route-itinerary h2 {
+    font-size: 34px;
+    margin: 12px 0 20px;
+}
+
+.route-intro > p {
+    max-width: 760px;
+    margin: 0 auto 15px;
+    line-height: 1.8;
+    color: #555555;
+}
+
+
+/* SECTION LABEL */
+
+.route-intro .section-label,
+.route-highlights .section-label,
+.route-itinerary .section-label,
+.route-booking .section-label {
+    color: #1f4e37;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+
+/* FACTS */
+
+.route-facts {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.fact {
+    padding: 28px 15px;
+    text-align: center;
+    border-right: 1px solid #eeeeee;
+}
+
+.fact:last-child {
+    border-right: none;
+}
+
+.fact strong {
+    display: block;
+    color: #1f4e37;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.fact span {
+    color: #777777;
+    font-size: 12px;
+}
+
+
+/* HIGHLIGHTS */
+
+.route-highlights {
+    background: #f7f9f7;
+    max-width: none;
+    padding-left: 6%;
+    padding-right: 6%;
+}
+
+.route-highlights > * {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.highlights-grid > div {
+    background: #ffffff;
+    padding: 25px;
+    border: 1px solid #eeeeee;
+}
+
+.highlights-grid h3 {
+    margin-top: 0;
+    color: #1f4e37;
+    font-size: 18px;
+}
+
+.highlights-grid p {
+    color: #666666;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+
+/* ITINERARY */
+
+.itinerary-list {
+    margin-top: 40px;
+}
+
+.itinerary-day {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 30px;
+    padding: 30px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.itinerary-day > span {
+    color: #1f4e37;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.itinerary-day h3 {
+    margin: 0 0 12px;
+    font-size: 20px;
+}
+
+.itinerary-day p {
+    margin: 0 0 12px;
+    color: #666666;
+    line-height: 1.7;
+}
+
+.itinerary-day small {
+    color: #1f4e37;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* BOOKING */
+
+.route-booking {
+    background: #1f4e37;
+    color: #ffffff;
+    text-align: center;
+    padding: 80px 30px;
+}
+
+.route-booking .section-label {
+    color: #ffffff;
+}
+
+.route-booking h2 {
+    font-size: 36px;
+    margin: 12px 0;
+}
+
+.route-booking p {
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.route-booking a {
+    display: inline-block;
+    background: #ffffff;
+    color: #1f4e37;
+    text-decoration: none;
+    padding: 13px 24px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+
+/* FOOTER */
+
+.site-footer,
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #ffffff;
+    color: #777777;
+    font-size: 13px;
+}
+
+
+/* PHONE */
+
+@media (max-width: 700px) {
+
+    .route-nav {
+        gap: 15px;
+    }
+
+    .route-nav span {
+        font-size: 12px;
+    }
+
+    .route-hero {
+        min-height: 430px;
+    }
+
+    .route-hero-overlay h1 {
+        font-size: 40px;
+    }
+
+    .route-facts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fact:nth-child(2) {
+        border-right: none;
+    }
+
+    .fact:nth-child(1),
+    .fact:nth-child(2) {
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .route-intro,
+    .route-highlights,
+    .route-itinerary {
+        padding: 60px 20px;
+    }
+
+    .route-intro h2,
+    .route-highlights h2,
+    .route-itinerary h2 {
+        font-size: 28px;
+    }
+
+    .highlights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .itinerary-day {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .itinerary-day h3 {
+        font-size: 18px;
+    }
+
+    .route-booking h2 {
+        font-size: 28px;
+    }
+}.route-hero {
+    min-height: 520px;
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("/packages/images/Machame.jpeg");
+
+    background-size: cover;
+    background-position: center 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+/* ===== MARANGU ROUTE PAGE ===== */
+
+.marangu-hero {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("/packages/images/Marangu 2.jpeg");
+
+    background-size: cover;
+    background-position: center 90%;
+}
+/* ===== LEMOSHO ROUTE PAGE ===== */
+
+.lemosho-hero {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("/packages/images/Lemosho.jpeg");
+
+    background-size: cover;
+    background-position: center 50%;
+}
+/* ===== RONGAI ROUTE PAGE ===== */
+
+.rongai-hero {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("/packages/images/Rongai.jpeg");
+
+    background-size: cover;
+    background-position: center 75%;
+}
+/* ===== NORTHERN CIRCUIT ROUTE PAGE ===== */
+
+.northern-hero {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("/packages/images/Northern Circuit.jpeg");
+
+    background-size: cover;
+    background-position: center 50%;
+}
+/* ===== UMBWE ROUTE PAGE ===== */
+
+.umbwe-hero {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("/packages/images/Umbwe 1.jpeg");
+
+    background-size: cover;
+    background-position: center 65%;
+}
+/* ===== SHIRA ROUTE PAGE ===== */
+
+.shira-hero {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("/packages/images/Shira.jpeg");
+
+    background-size: cover;
+    background-position: center 55%;
+}
+/* WHY CHOOSE US */
+
+.why-us {
+    padding: 110px 8%;
+    background: #f7f7f2;
+}
+
+.why-header {
+    max-width: 430px;
+    margin-bottom: 0;
+}
+
+.why-header h2 {
+    font-size: 52px;
+    line-height: 1.05;
+    margin: 14px 0 20px;
+}
+
+.why-header p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #666;
+}
+
+/* MAIN LAYOUT */
+
+.why-us {
+    display: grid;
+    grid-template-columns: 0.8fr 1.4fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 55px 45px;
+}
+
+/* EACH ILLUSTRATION */
+
+.why-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.why-illustration {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.why-illustration img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.why-item h3 {
+    margin: 0 0 9px;
+    font-size: 21px;
+}
+
+.why-item p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+    font-size: 15px;
+    max-width: 280px;
+}
+
+/* PHONE */
+
+@media (max-width: 600px) {
+
+    .why-us {
+        display: block;
+        padding: 75px 20px;
+    }
+
+    .why-header {
+        margin-bottom: 45px;
+    }
+
+    .why-header h2 {
+        font-size: 38px;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 20px;
+    }
+
+    .why-illustration {
+        width: 105px;
+        height: 105px;
+        margin-bottom: 16px;
+    }
+
+    .why-item h3 {
+        font-size: 17px;
+    }
+
+    .why-item p {
+        font-size: 14px;
+    }
+}
+/* WILDLIFE & SAFARI */
+
+.wildlife {
+    padding: 110px 8%;
+    background: #ffffff;
+}
+
+.wildlife-header {
+    max-width: 650px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.wildlife-header h2 {
+    font-size: 44px;
+    line-height: 1.1;
+    margin: 14px 0 16px;
+}
+
+.wildlife-header p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* SAFARI CARDS */
+
+.wildlife-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.wildlife-card {
+    background: #fff;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
+    border: 1px solid rgba(49, 92, 59, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.wildlife-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.13);
+}
+
+/* SAFARI IMAGE */
+
+.wildlife-image {
+    height: 280px;
+    overflow: hidden;
+}
+
+.wildlife-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.wildlife-card:hover .wildlife-image img {
+    transform: scale(1.06);
+}
+
+/* SAFARI CONTENT */
+
+/* WILDLIFE & SAFARI */
+
+.wildlife {
+    padding: 110px 8%;
+    background: #ffffff;
+}
+
+.wildlife-header {
+    max-width: 650px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.wildlife-header h2 {
+    font-size: 44px;
+    line-height: 1.1;
+    margin: 14px 0 16px;
+}
+
+.wildlife-header p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.wildlife-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.wildlife-card {
+    background: #fff;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
+    border: 1px solid rgba(49, 92, 59, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.wildlife-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.13);
+}
+
+.wildlife-image {
+    height: 280px;
+    overflow: hidden;
+}
+
+.wildlife-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.wildlife-card:hover .wildlife-image img {
+    transform: scale(1.06);
+}
+
+.wildlife-content {
+    padding: 30px 30px 34px;
+}
+
+.wildlife-content > span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #315c3b;
+}
+
+.wildlife-content h3 {
+    font-size: 24px;
+    margin: 11px 0 12px;
+    line-height: 1.2;
+}
+
+.wildlife-content p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.wildlife-content a {
+    color: #315c3b;
+    text-decoration: none;
+    font-weight: 700;
+    transition: opacity 0.3s ease;
+}
+
+.wildlife-content a:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+
+    .wildlife {
+        padding: 75px 20px;
+    }
+
+    .wildlife-header {
+        margin-bottom: 40px;
+    }
+
+    .wildlife-header h2 {
+        font-size: 34px;
+    }
+
+    .wildlife-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .wildlife-image {
+        height: 270px;
+    }
+
+    .wildlife-content {
+        padding: 25px;
+    }
+
+    .wildlife-content h3 {
+        font-size: 22px;
+    }
+}
+/* =========================================
+   EPIC TRAILS — EDITORIAL GALLERY
+========================================= */
+
+.gallery {
+    padding: 120px 7%;
+    background: #f7f8f5;
+}
+
+.gallery-header {
+    max-width: 720px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.gallery-header h2 {
+    font-size: 48px;
+    line-height: 1.05;
+    margin: 14px 0 18px;
+}
+
+.gallery-header p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* MAIN GALLERY */
+
+.gallery-grid {
+    max-width: 1250px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr 1fr;
+    grid-template-rows: 300px 300px 260px;
+
+    gap: 18px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    transition: transform 0.7s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* KILIMANJARO — LARGE */
+
+.gallery-item:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+/* CLOSE UP */
+
+.gallery-item:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* CLOSE CALL — TALL */
+
+.gallery-item:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1 / 3;
+}
+
+/* MAASINDA */
+
+.gallery-item:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* ZANZIBAR — WIDE */
+
+.gallery-item:nth-child(5) {
+    grid-column: 1 / 3;
+    grid-row: 3;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .gallery {
+        padding: 80px 18px;
+    }
+
+    .gallery-header {
+        margin-bottom: 38px;
+    }
+
+    .gallery-header h2 {
+        font-size: 34px;
+    }
+
+    .gallery-header p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .gallery-grid {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:
+            280px
+            220px
+            220px
+            280px;
+
+        gap: 12px;
+    }
+
+    /* KILIMANJARO */
+
+    .gallery-item:nth-child(1) {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    /* CLOSE UP */
+
+    .gallery-item:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    /* CLOSE CALL */
+
+    .gallery-item:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    /* MAASINDA */
+
+    .gallery-item:nth-child(4) {
+        grid-column: 1 / 3;
+        grid-row: 3;
+    }
+
+    /* ZANZIBAR */
+
+    .gallery-item:nth-child(5) {
+        grid-column: 1 / 3;
+        grid-row: 4;
+    }
+
+    .gallery-item {
+        border-radius: 5px;
+    }
+}
+/* ===== HERO PLANNING FORM ===== */
+
+.hero {
+    position: relative;
+}
+
+.hero-form {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 350px;
+    padding: 32px;
+
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 14px;
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.20);
+    box-sizing: border-box;
+}
+
+.hero-form > span {
+    display: block;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    color: #315c3b;
+    margin-bottom: 8px;
+}
+
+.hero-form h3 {
+    margin: 0 0 22px;
+
+    font-size: 27px;
+    line-height: 1.2;
+
+    color: #222;
+}
+
+.hero-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hero-form input,
+.hero-form select {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    border: 1px solid #e1e5df;
+    border-radius: 5px;
+
+    background: #fafbf9;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    outline: none;
+}
+
+.hero-form input:focus,
+.hero-form select:focus {
+    border-color: #315c3b;
+    background: #fff;
+}
+
+.hero-form button {
+    width: 100%;
+
+    margin-top: 5px;
+    padding: 14px;
+
+    border: none;
+    border-radius: 4px;
+
+    background: #315c3b;
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: opacity 0.25s ease,
+                transform 0.25s ease;
+}
+
+.hero-form button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+
+/* ===== HERO FORM — MOBILE ===== */
+
+@media (max-width: 900px) {
+
+    .hero {
+        min-height: auto;
+        padding: 70px 20px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-form {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 92%;
+    max-width: 360px;
+    padding: 24px;
+    margin: 40px auto 0;
+}
+
+}
+.safari-price {
+    display: inline-block;
+    margin: 8px 0 4px;
+
+    font-size: 20px;
+    font-weight: 800;
+
+    color: #315c3b;
+}
+
+
+/* =========================================
+   CLASSIC NORTHERN SAFARI PAGE
+========================================= */
+
+.site-header {
+    width: 100%;
+    padding: 22px 7%;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.site-header .container {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #1f4e37;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.back-home {
+    color: #1f4e37;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* ===== SAFARI HERO ===== */
+
+.safari-hero {
+    min-height: 560px;
+    background: url("wildlife/classic northern.html/classic northern.jpeg") center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.safari-hero-overlay {
+    width: 100%;
+    padding: 100px 7%;
+}
+
+.safari-hero-content {
+    max-width: 850px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+.safari-hero-content .section-label {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.safari-hero-content h1 {
+    font-size: 64px;
+    line-height: 1.05;
+    margin: 18px 0 22px;
+}
+
+.safari-hero-content p {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+
+/* ===== SAFARI INTRO ===== */
+
+.safari-intro {
+    padding: 110px 7%;
+    background: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.safari-intro-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 90px;
+    align-items: center;
+}
+
+.safari-intro-text {
+    max-width: 700px;
+}
+
+.safari-intro-text .section-label {
+    color: #315c3b;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.safari-intro-text h2 {
+    font-size: 48px;
+    line-height: 1.08;
+    margin: 15px 0 25px;
+}
+
+.safari-intro-text p {
+    color: #666666;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+
+/* ===== HIGHLIGHTS ===== */
+
+.safari-highlights {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-top: 1px solid #dddddd;
+}
+
+.highlight {
+    padding: 25px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+.highlight strong {
+    display: block;
+    color: #1f4e37;
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+.highlight span {
+    color: #777777;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+
+/* ===== ITINERARY ===== */
+
+.itinerary {
+    padding: 110px 7%;
+    background: #f7f8f5;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.section-heading .section-label {
+    color: #315c3b;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 48px;
+    margin: 14px 0 18px;
+}
+
+.section-heading p {
+    color: #666666;
+    line-height: 1.7;
+}
+
+.itinerary-list {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.itinerary-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 35px;
+    padding: 35px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+.itinerary-item:first-child {
+    border-top: 1px solid #dddddd;
+}
+
+.day-number {
+    color: #315c3b;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.itinerary-item h3 {
+    margin: 0 0 12px;
+    font-size: 22px;
+}
+
+.itinerary-item p {
+    margin: 0;
+    color: #666666;
+    line-height: 1.75;
+    font-size: 15px;
+}
+
+
+/* ===== CTA ===== */
+
+.safari-cta {
+    padding: 110px 7%;
+    background: #1f4e37;
+    text-align: center;
+    color: #ffffff;
+}
+
+.safari-cta .section-label {
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.safari-cta h2 {
+    font-size: 46px;
+    margin: 15px 0;
+}
+
+.safari-cta p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.safari-cta .cta-button {
+    display: inline-block;
+    padding: 15px 28px;
+    background: #ffffff;
+    color: #1f4e37;
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 4px;
+}
+
+
+/* ===== SAFARI FOOTER ===== */
+
+.safari-footer {
+    padding: 25px 7%;
+    background: #ffffff;
+    text-align: center;
+}
+
+.safari-footer p {
+    margin: 0;
+    color: #777777;
+    font-size: 12px;
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 768px) {
+
+    .site-header {
+        padding: 18px 20px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .back-home {
+        font-size: 13px;
+    }
+
+    .safari-hero {
+        min-height: 500px;
+    }
+
+    .safari-hero-overlay {
+        padding: 80px 20px;
+    }
+
+    .safari-hero-content h1 {
+        font-size: 42px;
+    }
+
+    .safari-hero-content p {
+        font-size: 15px;
+    }
+
+    .safari-intro {
+        padding: 75px 20px;
+    }
+
+    .safari-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .safari-intro-text h2 {
+        font-size: 36px;
+    }
+
+    .itinerary {
+        padding: 75px 20px;
+    }
+
+    .section-heading {
+        margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+        font-size: 36px;
+    }
+
+    .itinerary-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 28px 0;
+    }
+
+    .itinerary-item h3 {
+        font-size: 19px;
+    }
+
+    .safari-cta {
+        padding: 80px 20px;
+    }
+
+    .safari-cta h2 {
+        font-size: 34px;
+    }
+
+    .safari-cta .cta-button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+/* ================================
+   WILDLIFE & SAFARI
+================================ */
+
+.wildlife {
+    padding: 110px 7%;
+    background: #ffffff;
+}
+
+.wildlife-header {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.wildlife-header h2 {
+    font-size: 48px;
+    line-height: 1.1;
+    margin: 15px 0 18px;
+}
+
+.wildlife-header p {
+    color: #666666;
+    line-height: 1.7;
+}
+
+.wildlife-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.wildlife-card {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wildlife-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.wildlife-image {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+}
+
+.wildlife-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.wildlife-content {
+    padding: 30px;
+}
+
+.wildlife-content > span {
+    color: #315c3b;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.wildlife-content h3 {
+    font-size: 27px;
+    margin: 12px 0;
+}
+
+.wildlife-content p {
+    color: #666666;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.wildlife-content a {
+    display: inline-block;
+    color: #1f4e37;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+    border-bottom: 1px solid #1f4e37;
+    padding-bottom: 4px;
+}
+/* ===== WILDLIFE DESKTOP POLISH ===== */
+
+.wildlife-card {
+    position: relative;
+    min-height: 100%;
+}
+
+.wildlife-image {
+    height: 340px;
+}
+
+.wildlife-content {
+    min-height: 210px;
+    display: flex;
+    flex-direction: column;
+}
+
+.wildlife-content a {
+    margin-top: auto;
+    width: fit-content;
+    transition: opacity 0.3s ease;
+}
+
+.wildlife-content a:hover {
+    opacity: 0.65;
+}
+
+@media (max-width: 768px) {
+
+    .wildlife {
+        padding: 75px 20px;
+    }
+
+    .wildlife-header {
+        margin-bottom: 45px;
+    }
+
+    .wildlife-header h2 {
+        font-size: 36px;
+    }
+
+    .wildlife-header p {
+        font-size: 15px;
+    }
+
+    .wildlife-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .wildlife-image {
+        height: 260px;
+    }
+
+    .wildlife-content {
+        padding: 25px;
+    }
+
+    .wildlife-content h3 {
+        font-size: 23px;
+    }
+
+}
